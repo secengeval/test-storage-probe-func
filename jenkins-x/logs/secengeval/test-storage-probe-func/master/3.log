@@ -1,0 +1,120 @@
+Step: step-credential-initializer-ql9t9:
+
+{"level":"warn","ts":1565685940.538461,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565685940.5389168,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: step-working-dir-initializer-js9kp:
+
+{"level":"warn","ts":1565685941.3495378,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1565685941.3515813,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/test-storage-probe-func\""}
+Step: step-place-tools:
+
+Step: step-git-source-secengeval-test-storage-probe-f-2mfp8:
+
+{"level":"warn","ts":1565685950.5623424,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565685951.169349,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/secengeval/test-storage-probe-func.git @ v0.0.3 in path /workspace/source"}
+Step: step-git-merge:
+
+WARNING: no SHAs to merge, falling back to initial cloned commit
+Step: step-setup-jx-git-credentials:
+
+Generated Git credentials file /workspace/xdg_config/git/credentials
+Step: step-build-npmrc:
+
+WARNING: failed to find Secret npm-token in namespace ************
+Step: step-build-npm-install:
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN source No description
+npm WARN source No repository field.
+npm WARN source No license field.
+
+up to date in 0.763s
+found 0 vulnerabilities
+
+Step: step-build-npm-test:
+
+
+> @ test /workspace/source
+> echo "No tests yet..."
+
+No tests yet...
+Step: step-build-container-build:
+
+[36mINFO[0m[0000] Downloading base image mcr.microsoft.com/azure-functions/node:2.0 
+2019/08/13 08:45:55 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:b7455e549884ea5a2a6103d90264d77a441ca1859c10ea3bda938d2457616606: no such file or directory 
+[36mINFO[0m[0000] Downloading base image mcr.microsoft.com/azure-functions/node:2.0 
+2019/08/13 08:45:55 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0000] Using files from context: [/workspace/source] 
+[36mINFO[0m[0000] Checking for cached layer secprobes01.azurecr.io/todo/cache:b73630410366494c800fb930da24ef32bc913f6588002441f80125f1b3c0b251... 
+[36mINFO[0m[0000] No cached layer found for cmd RUN cd /home/site/wwwroot &&     npm install 
+[36mINFO[0m[0000] Unpacking rootfs as cmd RUN cd /home/site/wwwroot &&     npm install requires it. 
+[36mINFO[0m[0011] Taking snapshot of full filesystem...        
+[36mINFO[0m[0027] ENV AzureWebJobsScriptRoot=/home/site/wwwroot     AzureFunctionsJobHost__Logging__Console__IsEnabled=true 
+[36mINFO[0m[0027] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0027] Using files from context: [/workspace/source] 
+[36mINFO[0m[0027] COPY . /home/site/wwwroot                    
+[36mINFO[0m[0027] Taking snapshot of files...                  
+[36mINFO[0m[0027] RUN cd /home/site/wwwroot &&     npm install 
+[36mINFO[0m[0027] cmd: /bin/sh                                 
+[36mINFO[0m[0027] args: [-c cd /home/site/wwwroot &&     npm install] 
+npm WARN wwwroot No description
+npm WARN wwwroot No repository field.
+npm WARN wwwroot No license field.
+
+up to date in 1.201s
+found 0 vulnerabilities
+
+[36mINFO[0m[0028] Taking snapshot of full filesystem...        
+[36mINFO[0m[0032] Pushing layer secprobes01.azurecr.io/todo/cache:b73630410366494c800fb930da24ef32bc913f6588002441f80125f1b3c0b251 to cache now 
+2019/08/13 08:46:27 pushed blob: sha256:f3ba991a7e2d6c8c2cb5bf4e1b383892de0b64264bf1cc304d3be7c326a48f83
+2019/08/13 08:46:27 pushed blob: sha256:ee2d85aaf916350559da8afc6b8fba9e486c575154a9675ea7fcbfa07deebcc0
+2019/08/13 08:46:28 secprobes01.azurecr.io/todo/cache:b73630410366494c800fb930da24ef32bc913f6588002441f80125f1b3c0b251: digest: sha256:0cf0be213c90740f409589402aab37cfd54417dcf0e07ba31fffa8afb2b0deb8 size: 424
+2019/08/13 08:46:28 existing blob: sha256:4f22a2f066b0815560df4d2812b211f2623179f260101e6e6886e90d4e215869
+2019/08/13 08:46:28 existing blob: sha256:cfbd7c896c3d13059b708ea41c4a946d7e1df2cbd237d0f5081502247f6f21ad
+2019/08/13 08:46:28 existing blob: sha256:39638d907ab317dc292d05ab621553743fed66458ab61ce403a8f65a3bcdd071
+2019/08/13 08:46:28 existing blob: sha256:ae76a3838a0ab88975b72817b71233aafc1fecc7d21d7ea23be4f39e0b9939ef
+2019/08/13 08:46:28 existing blob: sha256:2194127dec71d927d98947c40018edc4aee1e12159ee18677dcda72f2ddae3d1
+2019/08/13 08:46:28 existing blob: sha256:0a4690c5d889e116874bf45dc757b515565a3bd9b0f6c04054d62280bb4f4ecf
+2019/08/13 08:46:28 pushed blob: sha256:f3ba991a7e2d6c8c2cb5bf4e1b383892de0b64264bf1cc304d3be7c326a48f83
+2019/08/13 08:46:28 pushed blob: sha256:35052e9c18f733851b1ff241d8f80eda4cc176f8c8e85f0e3243575b85a26be0
+2019/08/13 08:46:28 pushed blob: sha256:51ef8967ecc42f93e6c1e83e285d7009e0a3b43ceaa5758770f7f6e2e396b4d9
+2019/08/13 08:46:28 secprobes01.azurecr.io/secengeval/test-storage-probe-func:0.0.3: digest: sha256:6ed76902195fabb5b5ff1f145aa03f5fa06155b8e045592999152b64a59f21f5 size: 1575
+Step: step-build-post-build:
+
+no CVE provider running in the current ************ namespace so skip adding image to be analysed
+Step: step-promote-changelog:
+
+Converted /workspace/source/charts/test-storage-probe-func to an unshallow repository
+Generating change log from git ref b6f4dde0e9be34653031aaa989f52fce2eedc8e0 => 0e997091916ddf190bb717aa547f394be85f9c9b
+Associating user x-0 in users.jenkins.io with email paul.mccrady@dentsuaegis.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 4a2c029f6c6f79d7235d208831d6c60f73cb35f9 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email paul.mccrady@dentsuaegis.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 4a2c029f6c6f79d7235d208831d6c60f73cb35f9 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for secengeval/test-storage-probe-func and tag v0.0.3 so creating a new release
+Updated the release information at https://github.com/secengeval/test-storage-probe-func/releases/tag/v0.0.3
+generated: /workspace/source/charts/test-storage-probe-func/templates/release.yaml
+Created Release test-storage-probe-func-0-0-3 resource in namespace ************
+Updating PipelineActivity secengeval-test-storage-probe-func-master-3 with version 0.0.3
+Updated PipelineActivities secengeval-test-storage-probe-func-master-3 with release notes URL: https://github.com/secengeval/test-storage-probe-func/releases/tag/v0.0.3
+Step: step-promote-helm-release:
+
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file test-storage-probe-func-0.0.3.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+Step: step-promote-jx-promote:
+
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/jx/issues/2410
+Promoting app test-storage-probe-func version 0.0.3 to namespace ************-staging
+Created Pull Request: https://github.com/secengeval/environment-testprobes-staging/pull/3
+Added label  to Pull Request https://github.com/secengeval/environment-testprobes-staging/pull/3
+Pull Request https://github.com/secengeval/environment-testprobes-staging/pull/3 is merged at sha 763933337592c7f5c50c91b36879e86898f2ee57
+Pull Request merged but we are not waiting for the update pipeline to complete!
